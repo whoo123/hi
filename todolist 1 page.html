@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<div id='name'>
+		</div>
+		
+		<link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">		
+		<link rel="stylesheet" href="/resource/css/bootstrap.css">
+		<script type="text/javascript" src="/resource/js/bootstrap.js"></script>
+		<script src="script.js"></script>
+        <title> 
+			<script>
+				document.getElementById("name").write = "";
+			</script>	todolist 
+		</title>
+		<style> div{
+			
+			background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbevB6U%2FbtqAjWcBHmk%2FeSt8gbUfxa0BQKlKvklIKK%2Fimg.jpg');
+			
+			}
+			
+		</style>
+		
+	</head>
+	
+	
+	<body>
+			
+			<div class = "wrapper" style = 'display:grid; grid-template-columns:auto, 100px, 1fr, 1fr; grid-template-row: 1fr, 1fr, 1fr, 1fr'>
+				<div class = "namedeco" style = 'text-align: center; margin-bottom: 20px;'>
+					<h1>To Do List</h1>
+				</div>
+				<div class = "inputdeco" style = 'text-align: center; margin-bottom: 20px; '>
+					<input type="text" class = "form-control" id="inputtext" style="margin-left: auto; margin-right: auto; width: 435px; ">
+			  		<button onclick="input()" stlye ='display:inline-block; margin-bottom: 300px;' class = "btn btn-outline-secondary" id="button">추가하기</button>
+				</div>
+				<div class = "boxdeco">
+					 <ul class ="list-group" id ="output" style="margin-left:auto; margin-right:auto;  width:400px;">
+				  <li class="list-group-item">내일로 미루지 말기!</li>
+			  </ul>
+				</div>
+				<div style="padding-bottom: 1000px;">
+				
+				</div>
+				
+		</div>
+	   
+			
+	</body>
+</html>
+<script>
+	
+	function getname(){
+		 var name = localStorage.getItem('name');
+		
+	}
+	
+	
+	var temp;
+	var cnt = 1;
+	var button = document.getElementById('button');
+	
+
+		function input(){
+			var input = document.getElementById("inputtext").value;
+			temp = input;
+			var temp = document.createElement("li");
+			temp.setAttribute("class", "list-group-item");
+			temp.setAttribute("id", "li"+cnt);
+			temp.innerHTML = inputtext.value;
+			temp.innerHTML += "<button style='float: right; padding-bottom: 1px; padding-top: 1px; padding-left: 5px; padding-right: 6px;' class='btn-close' aria-label='Close'  type='button' onclick='remove("+cnt+")'> </button>";
+			output.appendChild(temp);
+			cnt++;
+		
+			
+			
+			if(input){
+				document.getElementById("inputtext").value = null;
+// 				input function이 실행되면 실행되는 조건문
+// 				inputtext value를 null 로 초기화해서 입력창을 비워주는 function 처음으로 혼자 짜본 함수 개짜릿하미
+				i++;
+				indexarr.push(i);
+				console.log(indexarr);
+			}			
+	}
+		function remove(cnt) {
+			var li = document.getElementById('li'+cnt);
+			output.removeChild(li);
+		}
+
+</script>
